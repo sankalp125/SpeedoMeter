@@ -33,14 +33,15 @@ android {
     }
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            register<MavenPublication>("release") {
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = "com.github.sankalp125"
+            artifactId = "speedometer"
+            version = "1.0.0"
+
+            project.afterEvaluate {
                 from(components["release"])
-                groupId = "com.github.Sankalp125"
-                artifactId = "speedometer"
-                version = "1.0.0"
             }
         }
     }
