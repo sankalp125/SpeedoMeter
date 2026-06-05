@@ -1,38 +1,44 @@
-# SpeedoMeter 🚀
+# SpeedoMeter 🚀 - The Ultimate Android Speedometer Library
 
-A highly customizable, elegant, and modern Speedometer library for Android. Built with **Jetpack Compose**, it offers 16+ unique designs and is fully compatible with **Traditional XML Layouts**.
+**SpeedoMeter** is a high-performance, modern **Android Speedometer View** and **Jetpack Compose Gauge** library. It is designed for developers who want to integrate beautiful, customizable, and animated gauges into their Android applications with ease.
+
+Built with **Kotlin** and **Jetpack Compose**, this library provides 16+ pre-defined **Speedometer styles**, ranging from classic analog dashboards to futuristic neon designs. It also offers full backward compatibility for **Traditional Android XML Layouts**.
 
 [![JitPack](https://jitpack.io/v/sankalp125/SpeedoMeter.svg)](https://jitpack.io/#sankalp125/SpeedoMeter)
 [![Android SDK](https://img.shields.io/badge/SDK-24%2B-brightgreen.svg)](https://android-arsenal.com/api?level=24)
+[![Language](https://img.shields.io/badge/Language-Kotlin-orange.svg)](https://kotlinlang.org/)
 
 ---
 
-## ✨ Features
+## ✨ Why Choose This Speedometer Library?
 
-- 🎨 **16+ Unique Styles**: From classic analog to modern neon and wave designs.
-- 📱 **Dual Support**: Works seamlessly with Jetpack Compose and XML Views.
-- 🌈 **Fully Customizable**: Change colors, ranges, and themes easily.
-- ⚡ **Smooth Animations**: High-performance needle and progress transitions.
-- 🛠️ **Easy Integration**: Get started in just a few minutes.
+If you are looking for a **Custom Speedometer for Android** or a **Circular Gauge Component**, this library is the perfect choice. 
 
----
-
-## 📸 Preview Styles
-
-| Style | Preview | Style | Preview |
-|-------|---------|-------|---------|
-| **Semi Circular** | ![Semi](https://via.placeholder.com/150?text=Semi+Circular) | **Circular** | ![Circular](https://via.placeholder.com/150?text=Circular) |
-| **Neon** | ![Neon](https://via.placeholder.com/150?text=Neon) | **Sporty** | ![Sporty](https://via.placeholder.com/150?text=Sporty) |
-| **Wave** | ![Wave](https://via.placeholder.com/150?text=Wave) | **Glow** | ![Glow](https://via.placeholder.com/150?text=Glow) |
-| **Retro** | ![Retro](https://via.placeholder.com/150?text=Retro) | **Stepped** | ![Stepped](https://via.placeholder.com/150?text=Stepped) |
-
-> *Note: Add your actual design screenshots in the `images/` folder and update these links.*
+- ✅ **16+ Premium Designs**: Neon, Wave, Sporty, Retro, and more.
+- ✅ **Jetpack Compose Native**: Fully optimized for **Compose UI**.
+- ✅ **XML Interoperability**: Easy to use in **Android XML Layouts** via `SpeedometerView`.
+- ✅ **Smooth Animations**: Hardware-accelerated needle and progress transitions.
+- ✅ **Lightweight & Fast**: No heavy dependencies, optimized for performance.
+- ✅ **Highly Customizable**: Modify colors, ranges (min/max), stroke width, and themes.
 
 ---
 
-## 📦 Installation
+## 📸 Preview Designs (Android UI Components)
 
-### 1. Add JitPack to your `settings.gradle`
+| Style | Description | Style | Description |
+|-------|-------------|-------|-------------|
+| **Neon Glow** | Futuristic glowing neon effect for modern apps. | **Sporty Gauge** | Bold segments designed for racing & automotive UI. |
+| **Wave Fill** | Unique liquid-fill effect for battery or speed tracking. | **Retro Analog** | Classic dashboard feel with a precision needle. |
+| **Circular Ring** | Clean, minimalist full-circle progress tracker. | **Stepped Blocks** | Discrete segments for a rugged digital look. |
+
+---
+
+## 📦 Installation (JitPack)
+
+Integrating this **Android UI Library** into your project is simple.
+
+### 1. Add JitPack Repository
+In your root `settings.gradle` file:
 ```kotlin
 dependencyResolutionManagement {
     repositories {
@@ -43,7 +49,8 @@ dependencyResolutionManagement {
 }
 ```
 
-### 2. Add the dependency to your app `build.gradle.kts`
+### 2. Add Dependency
+In your app-level `build.gradle.kts`:
 ```kotlin
 dependencies {
     implementation("com.github.sankalp125:SpeedoMeter:v1.0.2")
@@ -52,101 +59,69 @@ dependencies {
 
 ---
 
-## 🚀 Usage
+## 🚀 How to Use (Code Examples)
 
-### 1. Jetpack Compose
-Using the speedometer in Compose is as simple as calling a function:
+### 🧩 Using in Jetpack Compose
+The `Speedometer` composable is the core of this **Compose UI Library**.
 
 ```kotlin
 import com.hyperdash.speedometer.Speedometer
 import com.hyperdash.speedometer.SpeedometerStyle
-import com.hyperdash.speedometer.DashboardTheme
 
-Speedometer(
-    targetSpeed = 75f,
-    minSpeed = 0f,
-    maxSpeed = 100f,
-    style = SpeedometerStyle.NEON, // Choose from 16 styles
-    theme = DashboardTheme.MinimalLight,
-    modifier = Modifier.size(300.dp)
-)
+@Composable
+fun MyDashboard() {
+    Speedometer(
+        targetSpeed = 80f,
+        minSpeed = 0f,
+        maxSpeed = 160f,
+        style = SpeedometerStyle.NEON, // Select your preferred gauge style
+        modifier = Modifier.size(300.dp)
+    )
+}
 ```
 
-### 2. Traditional XML Layout
-For non-compose projects, use `SpeedometerView` in your XML files:
+### 🖼️ Using in Traditional XML Layouts
+This library acts as a perfect **Android Custom View** for XML-based projects.
 
 ```xml
 <com.hyperdash.speedometer.SpeedometerView
     android:id="@+id/speedometer"
-    android:layout_width="300dp"
+    android:layout_width="match_parent"
     android:layout_height="300dp"
-    app:targetSpeed="65"
-    app:minSpeed="0"
-    app:maxSpeed="100"
-    app:speedometerStyle="neon" /> <!-- Select style via XML -->
-```
-
-**Control via Code (Kotlin/Java):**
-```kotlin
-val speedometer = findViewById<SpeedometerView>(R.id.speedometer)
-speedometer.targetSpeed = 85f
-speedometer.style = SpeedometerStyle.WAVE
+    app:targetSpeed="70"
+    app:speedometerStyle="sporty" /> <!-- Easy XML attributes -->
 ```
 
 ---
 
-## 🎨 Available Styles
+## 🎨 Available Gauge Styles
 
-Explore all 16 built-in designs using the `SpeedometerStyle` enum:
+This library includes a variety of **Android Gauge Widgets**:
 
-- `SEMI_CIRCULAR`: The classic dashboard look.
-- `CIRCULAR`: Full ring progress.
-- `NEON`: High-contrast glowing neon effect.
-- `WAVE`: Unique liquid-fill wave effect.
-- `SPORTY`: Thick segments with a racing vibe.
-- `RETRO`: Classic analog style with a red needle.
-- `GLOW`: Soft ambient glow around the arc.
-- `STEPPED`: Progress shown in discrete blocks.
-- `MODERN_ARC`: Minimalist gradient arc.
-- `DASHED_ARC`: Stylized dashed segments.
-- `QUARTER_CIRCULAR`: Corner-aligned gauge.
-- `DOTTED_CIRCULAR`: Modern dotted progress ring.
-- `MINIMALIST`: Just the numbers and a slim arc.
-- `LINEAR_VERTICAL`: Vertical bar gauge.
-- `LINEAR_HORIZONTAL`: Horizontal bar gauge.
-- `DOUBLE_ARC`: Multi-layered progress arcs.
+- `SEMI_CIRCULAR`: Standard semi-circle dashboard.
+- `NEON`: Vibrant neon glowing arc.
+- `WAVE`: Animated water/wave fill effect.
+- `SPORTY`: Bold racing-style segments.
+- `RETRO`: Precision analog needle gauge.
+- `GLOW`: Soft ambient background glow.
+- `DOTTED_CIRCULAR`: Modern dots-based progress ring.
+- `QUARTER_CIRCULAR`: Space-saving corner gauge.
+- `LINEAR_VERTICAL/HORIZONTAL`: Sleek bar-style speedometers.
 
 ---
 
-## 🛠️ Customization
-
-### Themes
-You can define custom colors using the `DashboardTheme` data class:
-
-```kotlin
-val MyCustomTheme = DashboardTheme(
-    name = "Dark Mode",
-    zone1Color = Color.Red,
-    zone5Color = Color.Green,
-    needleColor = Color.White,
-    // ... define other colors
-)
-```
+## 🛠️ Configuration & Customization
+You can easily customize the **Dashboard Theme** to match your app's branding:
+- Change **Zone Colors** (Green to Red segments).
+- Adjust **Needle Thickness** and Color.
+- Customize **Background Track** and Glow intensity.
 
 ---
 
-## 🤝 Contribution
-Contributions are welcome! If you have a new design idea or found a bug, feel free to open an Issue or a Pull Request.
+## 🏷️ Keywords
+Android Speedometer Library, Jetpack Compose Gauge, Android Custom View, Kotlin Speedometer, Circular Progress Bar, Android Dashboard UI, Gauge Component Android, Animated Speedometer Kotlin, Android UI Widgets, SpeedometerView.
 
 ---
 
 ## 📄 License
-```
-Copyright 2026 Sankalp Tiwari
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-```
+Copyright 2026 Sankalp Tiwari. Licensed under the Apache License (Version 2.0).
