@@ -1,0 +1,6 @@
+{
+  "name": "HyperDash Speedometer",
+  "description": "An ultra-modern cyberpunk digital speedometer with glassmorphism, customizable neon gauge themes, realistic needle physics, red-line vibration, and smooth glowing arc animations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

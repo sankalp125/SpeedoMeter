@@ -1,0 +1,8 @@
+com.hyperdash.speedometer-pngs-0 /Users/sankalptiwari/work/PracticeProjects/hyperdash-speedometer/speedometer/build/generated/res/pngs/debug
+com.hyperdash.speedometer-updated_navigation_xml-1 /Users/sankalptiwari/work/PracticeProjects/hyperdash-speedometer/speedometer/build/generated/updated_navigation_xml/debug
+com.hyperdash.speedometer-mergeDebugResources-2 /Users/sankalptiwari/work/PracticeProjects/hyperdash-speedometer/speedometer/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.hyperdash.speedometer-mergeDebugResources-3 /Users/sankalptiwari/work/PracticeProjects/hyperdash-speedometer/speedometer/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.hyperdash.speedometer-debug-4 /Users/sankalptiwari/work/PracticeProjects/hyperdash-speedometer/speedometer/build/intermediates/merged_res/debug/mergeDebugResources
+com.hyperdash.speedometer-debug-5 /Users/sankalptiwari/work/PracticeProjects/hyperdash-speedometer/speedometer/build/intermediates/packaged_res/debug/packageDebugResources
+com.hyperdash.speedometer-debug-6 /Users/sankalptiwari/work/PracticeProjects/hyperdash-speedometer/speedometer/src/debug/res
+com.hyperdash.speedometer-main-7 /Users/sankalptiwari/work/PracticeProjects/hyperdash-speedometer/speedometer/src/main/res

@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.hyperdash.speedometer-release-42:/values-v30/values-v30.xml",
+            "map": [
+                {
+                    "source": "/Users/sankalptiwari/.gradle/caches/9.3.1/transforms/58cc1f90f070b1758adbb8620612960f/transformed/material3-release/res/values-v30/values-v30.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "72",
+                        "endOffsets": "123"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.hyperdash.speedometer-mergeReleaseResources-40:/values-v30/values-v30.xml",
+            "map": [
+                {
+                    "source": "/Users/sankalptiwari/.gradle/caches/9.3.1/transforms/58cc1f90f070b1758adbb8620612960f/transformed/material3-release/res/values-v30/values-v30.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "72",
+                        "endOffsets": "123"
+                    }
+                }
+            ]
+        }
+    ]
+}
