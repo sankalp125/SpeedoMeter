@@ -38,7 +38,7 @@ publishing {
         create<MavenPublication>("release") {
             groupId = "com.github.sankalp125"
             artifactId = "speedometer"
-            version = "1.0.0"
+            version = "1.0.3"
 
             project.afterEvaluate {
                 from(components["release"])

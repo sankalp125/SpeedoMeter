@@ -1,1 +1,22 @@
 com.hyperdash.speedometer
+attr maxSpeed
+attr minSpeed
+attr speedometerStyle
+attr targetSpeed
+id circular
+id dashed_arc
+id dotted_circular
+id double_arc
+id glow
+id linear_horizontal
+id linear_vertical
+id minimalist
+id modern_arc
+id neon
+id quarter_circular
+id retro
+id semi_circular
+id sporty
+id stepped
+id wave
+styleable SpeedometerView maxSpeed minSpeed speedometerStyle targetSpeed

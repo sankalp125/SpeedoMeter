@@ -258,23 +258,14 @@
         <attr format="reference" name="fontProviderCerts"/>
         
         <attr name="fontProviderFetchStrategy">
-            <!-- The blocking font fetch works as follows.
-              First, check the local cache, then if the requested font is not cached, request the
-              font from the provider and wait until it is finished.  You can change the length of
-              the timeout by modifying fontProviderFetchTimeout.  If the timeout happens, the
-              default typeface will be used instead. -->
+            
             <enum name="blocking" value="0"/>
-            <!-- The async font fetch works as follows.
-              First, check the local cache, then if the requested font is not cached, trigger a
-              request the font and continue with layout inflation. Once the font fetch succeeds, the
-              target text view will be refreshed with the downloaded font data. The
-              fontProviderFetchTimeout will be ignored if async loading is specified. -->
+            
             <enum name="async" value="1"/>
         </attr>
         
         <attr format="integer" name="fontProviderFetchTimeout">
-            <!-- A special value for the timeout. In this case, the blocking font fetching will not
-              timeout and wait until a reply is received from the font provider. -->
+            
             <enum name="forever" value="-1"/>
         </attr>
         
@@ -347,5 +338,28 @@
         <attr name="android:offset"/>
         
         <attr name="android:color"/>
+    </declare-styleable>
+    <declare-styleable name="SpeedometerView">
+        <attr format="float" name="targetSpeed"/>
+        <attr format="float" name="minSpeed"/>
+        <attr format="float" name="maxSpeed"/>
+        <attr format="enum" name="speedometerStyle">
+            <enum name="semi_circular" value="0"/>
+            <enum name="circular" value="1"/>
+            <enum name="modern_arc" value="2"/>
+            <enum name="sporty" value="3"/>
+            <enum name="linear_vertical" value="4"/>
+            <enum name="linear_horizontal" value="5"/>
+            <enum name="dashed_arc" value="6"/>
+            <enum name="quarter_circular" value="7"/>
+            <enum name="dotted_circular" value="8"/>
+            <enum name="glow" value="9"/>
+            <enum name="minimalist" value="10"/>
+            <enum name="stepped" value="11"/>
+            <enum name="wave" value="12"/>
+            <enum name="retro" value="13"/>
+            <enum name="double_arc" value="14"/>
+            <enum name="neon" value="15"/>
+        </attr>
     </declare-styleable>
 </resources>

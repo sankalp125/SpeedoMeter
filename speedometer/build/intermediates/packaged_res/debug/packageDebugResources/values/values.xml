@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SpeedometerView">
+        <attr format="float" name="targetSpeed"/>
+        <attr format="float" name="minSpeed"/>
+        <attr format="float" name="maxSpeed"/>
+        <attr format="enum" name="speedometerStyle">
+            <enum name="semi_circular" value="0"/>
+            <enum name="circular" value="1"/>
+            <enum name="modern_arc" value="2"/>
+            <enum name="sporty" value="3"/>
+            <enum name="linear_vertical" value="4"/>
+            <enum name="linear_horizontal" value="5"/>
+            <enum name="dashed_arc" value="6"/>
+            <enum name="quarter_circular" value="7"/>
+            <enum name="dotted_circular" value="8"/>
+            <enum name="glow" value="9"/>
+            <enum name="minimalist" value="10"/>
+            <enum name="stepped" value="11"/>
+            <enum name="wave" value="12"/>
+            <enum name="retro" value="13"/>
+            <enum name="double_arc" value="14"/>
+            <enum name="neon" value="15"/>
+        </attr>
+    </declare-styleable>
+</resources>

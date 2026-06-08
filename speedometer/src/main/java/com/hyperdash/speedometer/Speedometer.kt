@@ -35,13 +35,18 @@ fun Speedometer(
     style: SpeedometerStyle = SpeedometerStyle.SEMI_CIRCULAR,
     modifier: Modifier = Modifier
 ) {
-    // State to trigger initial animation
-    var startValue by remember { mutableStateOf(minSpeed) }
+    // Sanitize inputs to prevent NaN crashes
+    val safeTargetSpeed = if (targetSpeed.isNaN()) minSpeed else targetSpeed
+    val safeMinSpeed = if (minSpeed.isNaN()) 0f else minSpeed
+    val safeMaxSpeed = if (maxSpeed.isNaN() || maxSpeed <= safeMinSpeed) safeMinSpeed + 100f else maxSpeed
 
-    LaunchedEffect(targetSpeed) {
+    // State to trigger initial animation
+    var startValue by remember { mutableStateOf(safeMinSpeed) }
+
+    LaunchedEffect(safeTargetSpeed) {
         // Small delay to ensure the UI is rendered and visible before animation starts
         kotlinx.coroutines.delay(300)
-        startValue = targetSpeed
+        startValue = safeTargetSpeed
     }
 
     // Smooth transition for the gauge needle
@@ -54,11 +59,31 @@ fun Speedometer(
         label = "NeedleAnimator"
     )
 
+    SpeedometerContent(
+        currentSpeedAnimated = currentSpeedAnimated,
+        minSpeed = safeMinSpeed,
+        maxSpeed = safeMaxSpeed,
+        theme = theme,
+        style = style,
+        modifier = modifier
+    )
+}
+
+@Composable
+private fun SpeedometerContent(
+    currentSpeedAnimated: Float,
+    minSpeed: Float,
+    maxSpeed: Float,
+    theme: DashboardTheme,
+    style: SpeedometerStyle,
+    modifier: Modifier = Modifier
+) {
     val currentIntSpeed = currentSpeedAnimated.roundToInt()
 
     // Color theme matching for the active numeric reading matching the active zone
     val range = maxSpeed - minSpeed
-    val ratio = if (range != 0f) (currentSpeedAnimated - minSpeed) / range else 0f
+    val safeRange = if (range <= 0f) 1f else range
+    val ratio = (currentSpeedAnimated - minSpeed) / safeRange
     
     val activeZoneColor by animateColorAsState(
         targetValue = when {
@@ -70,14 +95,6 @@ fun Speedometer(
         },
         label = "CurrentZoneColor"
     )
-
-    val performanceText = when {
-        ratio <= 0.2f -> "Very Poor"
-        ratio <= 0.4f -> "Poor"
-        ratio <= 0.6f -> "Average"
-        ratio <= 0.8f -> "Good"
-        else -> "Excellent"
-    }
 
     Column(
         modifier = modifier
@@ -121,13 +138,6 @@ fun Speedometer(
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif
             )
-//            Text(
-//                text = performanceText,
-//                color = activeZoneColor,
-//                fontSize = 24.sp,
-//                fontWeight = FontWeight.Bold,
-//                fontFamily = FontFamily.SansSerif
-//            )
         }
     }
 }
